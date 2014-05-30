@@ -272,6 +272,7 @@ public abstract class ExtendableListView extends AbsListView {
             mRecycleBin.setViewTypeCount(mAdapter.getViewTypeCount());
         }
 
+        updateEmptyStatus();
         requestLayout();
     }
 
@@ -326,7 +327,7 @@ public abstract class ExtendableListView extends AbsListView {
 
         if (mAdapter != null && !(mAdapter instanceof HeaderViewListAdapter)) {
             throw new IllegalStateException(
-                    "Cannot add header view to list -- setAdapter has already been called.");
+                    "Cannot add header view to list --  has already been called.");
         }
 
         FixedViewInfo info = new FixedViewInfo();
